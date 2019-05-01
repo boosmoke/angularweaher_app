@@ -1,0 +1,93 @@
+.highlight-bold{
+    font-weight: 900;
+}
+
+.gray-text{
+    color:#afafaf;
+    text-transform: lowercase;
+}
+
+.faded-out{
+    color: #c9c9c9;
+}
+
+.weather-details{
+    border: none;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background: none;
+    outline:none;
+    box-shadow: none;
+    margin:0;
+    padding: 20px 10px;
+}
+
+.yes .weather-details{
+    background:red;
+    opacity: 0;
+    visibility: none;
+}
+
+
+
+.well span{
+    display:block;
+    padding:2px 0;
+}
+.small-info span{
+    padding:5px 0;
+}
+.content-wrap{
+    background-color: rgba(41, 43, 44, .90);
+    width:100%;
+    min-height:342px;
+    padding:10px 0;
+    border-radius: 3px;
+}
+
+.current-temp{
+    font-size:2em;
+}
+
+.day-info{
+    background: rgba(56, 63, 74, 0.2);
+    width:65%;
+    margin: 0 auto 15px;
+    border-radius: 50px;
+}
+
+.day-info > span{
+    margin:0;
+    padding:0;
+}
+
+.day-date{
+    font-size:1em
+}
+.current-temp{
+    font-size: 3.5em;
+}
+.hourly-detail{
+    position: relative;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+}
+.hourly-detail::after{
+    font-family: FontAwesome;
+    content: "\f151";
+    position: absolute;
+    font-size: 2em;
+    width:40px;
+    top:0;
+    right:0;
+    color: rgb(216, 216, 216);
+    z-index: 9999;
+    transform: rotate(180deg);
+}
+
+
+.hourly-detail:hover {
+    box-shadow: 0 7px 8px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform:scale(1.02);
+}

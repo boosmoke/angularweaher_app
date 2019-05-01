@@ -1,0 +1,65 @@
+.weather-list-container{
+    float:none;
+    position:relative;
+    border: none;
+    background-color: rgba(41, 43, 44, .90);
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    padding:0 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.weather-list-container:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: scale(1.01);
+}
+
+
+
+.remove{
+    position:absolute;
+    font-size:.5em;
+    top:0;
+    right:0;
+    transition:opacity 250ms ease-in-out;
+    z-index:9999;
+}
+@media screen and (min-width: 801px){
+    .remove{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .weather-list-container:hover .remove{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.weather-list-info{
+    text-align: right;
+}
+
+
+.weather-cityname{
+    padding:0;
+    margin:0;
+    text-transform: uppercase;
+    font-size:2.8em;
+    line-height: 1.4;
+    padding-top:12px;
+}
+@media screen and (max-width: 601px){
+    .weather-cityname{
+        font-size: 2.2em;
+    }
+}
+.weather-temp{
+    font-size:2.8em;
+}
+.weather-description{
+    margin-bottom: 0px;
+    width:100%;
+    text-align: right;
+}
