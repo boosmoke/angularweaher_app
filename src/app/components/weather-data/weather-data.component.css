@@ -1,0 +1,132 @@
+.metric-holder{
+    float:right;
+    margin-right:2.2em;
+}
+.controls{
+    background: none;
+    font-size: 1.5em;
+    color:#fff;
+}
+.metric-button{
+    color:#c3c3c371;
+}
+.metric-button:disabled{
+    color: #fff;
+}
+.metric-button-first{
+    border-right: 2px solid #fff;
+}
+.container{
+    padding-top: 5em;
+    padding-top:10vh;
+}
+label{
+    position: relative;
+}
+
+.load-samples{
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+.search-container{
+    display:block;
+    width: 100%;
+    position: relative;
+}
+
+.locationSearchInput, #search-weather{
+    background-color: rgba(19,35,42, .5);
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    height:100%;
+    width:100%;
+    transition: width 250ms ease-in;
+}
+.locationSearchInput{
+    padding-left: 50px;
+    height: 60px;
+}
+.search-box{
+    position: relative;
+}
+.search-box, .submit-box{
+    width:60%;
+    margin: 0 auto;
+}
+
+.search-box:before {
+    content: "\f002 ";
+    font-family: "FontAwesome";
+    position:absolute;
+    top:-2px;
+    left:10px;
+    font-size: 3em;
+    color:#e8e9ea;
+ }
+ #search-weather{
+    background-color: rgba(19,35,42, .8);
+    position: relative;
+    overflow: hidden;
+    height:0;
+    padding:0;
+    border:none;
+    transition: height 250ms ease-in-out;
+ }
+ #search-weather.open{
+     height:44px;
+ }
+
+.weather-data-recommendation{
+    background-color:rgba(0, 37, 14, 0.75);
+    border:none;
+    border-radius: 0;
+    color:#fff;
+    padding: 2em 0 0;
+    width:60%;
+    margin: 0 auto;
+}
+.weather-data-recommendation-container{
+    padding: 0 25px;
+    display: flex;
+}
+@media screen and (max-width: 601px){
+    .weather-data-recommendation-container{
+        display: block;
+    }
+}
+.weather-recommendation-button{
+    font-size:3em;
+    cursor: pointer;
+    display: block;
+    text-align: right;
+    padding-right: 25px;
+}
+.first-recommend{
+    flex:1;
+}
+.recommend-text{
+    font-size: 1.5em;
+}
+.recommend-desc{
+    font-size: .8em;
+    font-style: italic;
+}
+.recommend-temp{
+    font-size: 1.5em;
+}
+.weather-data-container{
+    margin-top: 200px;
+    margin-top: 25vh;
+}
+.form-error strong{
+    display:block;
+    margin: 0 auto;
+    color: #d85452;
+    width:60%;
+}
+
+

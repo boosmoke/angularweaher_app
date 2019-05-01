@@ -1,0 +1,21 @@
+.weather-hourly-container{
+    margin: 20px 0;
+    color:#fff;
+}
+
+.wind-container{
+    justify-content: flex-start;
+}
+
+.table{
+    border-radius: 3px;
+    border-collapse: separate !important;
+    background-color: rgba(41, 43, 44, .90);
+    color:#fff;
+    table-layout: fixed;
+    border-top: 2px solid #fff;
+}
+.table td{
+    line-height: 3;
+    text-overflow:ellipsis;
+}

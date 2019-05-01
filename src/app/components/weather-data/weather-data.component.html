@@ -1,0 +1,51 @@
+
+<div (click)="loadSampleData()"class="load-samples btn btn-info">Load samples</div>
+<div class="metric-holder">
+  <button class="btn controls" (click)="refreshWeather()" title="REFRESH ALL"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+  <button class="btn controls" (click)="clearLocalStorage()" title="CLEAR ALL"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+  <button [disabled]="celcius" (click)="switchMetric(true)" title="CELCIUS" class="btn controls metric-button metric-button-first">C&deg;</button>
+  <button [disabled]="!celcius" (click)="switchMetric(false)" title="FARENHEIT" class="btn controls metric-button">F&deg;</button>
+</div>
+<div class="container">
+  <div>
+    <form (ngSubmit)="onSubmit(searchForm); searchForm.reset();" #searchForm="ngForm">
+
+      <div class="form-group">
+        <div class="search-container">
+            <em class="form-error" *ngIf="searchForm.controls.cityLocation?.invalid && searchForm.controls.cityLocation?.dirty">
+              <strong>Please fill in a city</strong>
+            </em>
+            <div class="search-box">
+                <input type="text"  (focus)="focusInHandler()" (focusout)="focusOutHandler()" id="locationSearchInput" class="locationSearchInput form-control" name="cityLocation" (ngModel)="cityLocation" required #input >
+            </div>
+            <div class="submit-box">
+                <input id="search-weather" class="btn search-weather" [disabled]="searchForm.invalid" value="Search" type="submit">
+            </div>
+        </div>
+        
+      </div>
+      
+    </form>
+    <div *ngIf="dataSearch.length > 0" class="weather-data-recommendation well">
+      <div class="weather-data-recommendation-container">
+        <div class="first-recommend">
+          <p class="recommend-text">Did you mean  {{dataSearch[0]?.city.name}}, {{dataSearch[0]?.city.country}}?
+            <span class="recommend-desc">{{dataSearch[0]?.list[0].weather[0].description}}</span>
+          </p>
+          <img src="assets/img/{{dataSearch[0]?.list[0].weather[0].icon}}.png" alt="">
+          <span class="recommend-temp">{{dataSearch[0]?.list[0].temp.day | number : '1.0-0'}}
+              <span *ngIf="dataSearch[1] === 'imperial'">&#8457;</span>
+              <span *ngIf="dataSearch[1] === 'metric'">&#8451;</span>
+          </span>
+        </div>
+        <div>
+          <i class="fa fa-plus weather-recommendation-button" aria-hidden="true" (click)="addItemToList(dataSearch[0])"></i>
+        </div>
+      </div>
+    </div>
+    <div class="weather-data-container">
+      <app-weather-list [weatherData]="WEATHER_DATA"></app-weather-list>
+    </div>
+  </div>
+</div>
+  
